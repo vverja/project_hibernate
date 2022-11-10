@@ -27,7 +27,7 @@ public class PlayerRepositoryDB implements IPlayerRepository {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Configuration configuration = new Configuration().addAnnotatedClass(Player.class)
-                    .setProperty(Environment.HBM2DDL_AUTO,"create");
+                    .setProperty(Environment.HBM2DDL_AUTO,"update");
             this.sessionFactory = configuration.buildSessionFactory();
         } catch (ClassNotFoundException e) {
             throw new RuntimeException("No class found");
